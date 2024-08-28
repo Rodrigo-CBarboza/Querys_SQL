@@ -1,0 +1,47 @@
+--- TABELA FOPAG
+
+CREATE TABLE BDRV.DBO.TBL_FOPAG
+(uf VARCHAR(2) NOT NULL,
+cpf_colaborador NUMERIC (11) NOT NULL,
+nome_colaborador VARCHAR (100) NOT NULL,
+cargo VARCHAR (100) NOT NULL,
+situacao VARCHAR (100) NOT NULL,
+modelo_rv VARCHAR (100) NOT NULL,
+valor_fopag MONEY NOT NULL,
+data_fopag VARCHAR (6) NOT NULL,
+data_fpw VARCHAR (6) NOT NULL);
+
+--- TABELA FOLHA
+
+CREATE TABLE BDRV.DBO.TBL_FOLHA
+(data_fpw VARCHAR (6) NOT NULL,
+id_colaborador NUMERIC (10) NOT NULL,
+situacao VARCHAR (100) NOT NULL,
+desc_pagamento VARCHAR (100) NOT NULL,
+valor_fpw MONEY NOT NULL,
+uf VARCHAR (2) NOT NULL);
+
+--- TABELA HC
+CREATE TABLE BDRV.DBO.HISTORICO_HC
+(cpf_colaborador NUMERIC (11) NOT NULL,
+id_colaborador NUMERIC (10) NOT NULL,
+centro_custo VARCHAR (10) NOT NULL,
+produto VARCHAR (50) NOT NULL,
+diretoria VARCHAR (50) NOT NULL,
+cargo VARCHAR (100) NOT NULL,
+data_hc NUMERIC (6) NOT NULL,
+produto_agrupado VARCHAR (50) NOT NULL,
+data_fpw NUMERIC (6) NOT NULL)
+
+--- TABELA ORÇAMENTO
+CREATE TABLE BDRV.DBO.ORCAMENTO_RV
+(tipo_controle VARCHAR (20) NOT NULL,
+uf VARCHAR (2) NOT NULL,
+diretoria VARCHAR (50) NOT NULL,
+produto VARCHAR (50) NOT NULL,
+centro_custo VARCHAR (10) NOT NULL,
+valor_orcado MONEY NOT NULL,
+valor_pago MONEY NOT NULL,
+ref NUMERIC (6) NOT NULL,
+produto_agrupado VARCHAR (50) NOT NULL)
+
